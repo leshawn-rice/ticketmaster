@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - 15
+  
+script:
+  - cd frontend
+  - npm install
+  - npm run test
+  - npm run build
+  - cd ../backend
+  - npm install
+  - npm run test
+
+services:
+  - postgresql
+before_script:
+  - cd backend
+  - psql -c 'create database "ticketmaster_test";' -U postgres
+  - psql < seed.sql
+  - psql < tm-test-data.sql
+  - cd ..
