@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // Internal Dependencies
-import logo from '../../img/logo.png';
+import logo from '../../img/logo3.png';
 // Styles
 import '../../styles/Navbar.css';
 
