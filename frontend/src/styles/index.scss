@@ -1,0 +1,101 @@
+$primaryColor: #0E6EC5;
+$secondaryColor: white;
+$darkColor: rgb(12, 12, 12);
+$darkSecondary: rgb(58,58,58);
+
+@font-face {
+  font-family: Consolas;
+  src: url('../fonts/Consolas.ttf');
+}
+
+@mixin theme($themePrimary: $primaryColor, $themeSecondary: $secondaryColor) {
+  background: $themePrimary;
+  color: $themeSecondary;
+}
+
+@mixin row($height: 100%, $width: 100%) {
+  display: flex;
+  flex-direction: row;
+  height: $height;
+  width: $width;
+}
+
+@mixin column($height: 100%, $width: 100%) {
+  display: flex;
+  flex-direction: column;
+  height: $height;
+  width: $width;
+}
+
+
+html {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: Consolas;
+  font-size: 10px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: inherit;
+  width: inherit;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: inherit;
+  width: inherit;
+  position: relative;
+}
+
+.header-1 {
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+.header-2 {
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.header-3 {
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+.header-4 {
+  font-size: 2.75rem;
+  font-weight: 500;
+}
+
+.header-5 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.text {
+  font-size: 1.5rem;
+}
+
+.text-large {
+  font-size: 2rem;
+}
+
+.text-small {
+  font-size: 1.25rem;
+}
+
+.caption {
+  font-size: 1rem;
+  color: $darkSecondary;
+}
+
+.caption.dark {
+  color: $secondaryColor;
+}

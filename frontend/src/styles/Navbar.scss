@@ -1,0 +1,61 @@
+@use 'index';
+
+@mixin nav-item {
+  border-bottom: 0.5rem solid transparent;
+  transition: border-color 200ms linear;
+  padding-bottom: 1px;
+  color: inherit;
+  text-decoration: none;
+}
+
+@mixin animate-border {
+  border-bottom: 0.5rem solid index.$secondaryColor;
+  border-radius: 0.25rem;
+}
+
+.Navbar {
+  @include index.theme;
+  @include index.row($height: fit-content, $width: 100%);
+  position: fixed;
+  align-items: center;
+  z-index: 100;
+}
+
+.Navbar.dark {
+  @include index.theme($themePrimary: index.$darkColor, $themeSecondary: index.$secondaryColor);
+}
+
+.Navbar-Home {
+  @include index.row($height: inherit, $width: 25%);
+  cursor: pointer;
+  align-items: center;
+}
+
+.Navbar-Logo {
+  width: 15%;
+  height: 15%;
+}
+
+.Navbar-Header {
+  @include nav-item;
+  font-size: 2.25rem;
+}
+
+.Navbar-Links {
+  @include index.row($height: inherit, $width: 75%);
+  justify-content: space-evenly;
+}
+
+.Navbar-Link {
+  @include nav-item;
+  font-size: 1.75rem;
+}
+
+.Navbar-Home:hover .Navbar-Header {
+  @include animate-border;
+}
+
+.Navbar-Link:hover {
+  @include animate-border;
+}
+

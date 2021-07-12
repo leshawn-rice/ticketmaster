@@ -1,0 +1,17 @@
+@use 'index';
+
+.App {
+  @include index.theme($themePrimary: index.$secondaryColor, $themeSecondary: index.$darkColor);
+  @include index.column($height: inherit, $width: inherit);
+  position: relative;
+}
+
+.App.dark {
+  @include index.theme ($themePrimary: index.$darkSecondary, $themeSecondary: index.$secondaryColor);
+}
+
+.container {
+  @include index.column($height: inherit, $width: 90%);
+  position: relative;
+  margin: 5%;
+}
