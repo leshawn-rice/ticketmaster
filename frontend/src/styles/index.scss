@@ -1,4 +1,5 @@
 $primaryColor: #0E6EC5;
+$primaryColorAlt: #0ec5c2;
 $secondaryColor: white;
 $darkColor: rgb(12, 12, 12);
 $darkSecondary: rgb(58,58,58);
@@ -18,6 +19,7 @@ $darkSecondary: rgb(58,58,58);
   flex-direction: row;
   height: $height;
   width: $width;
+  flex-wrap: wrap;
 }
 
 @mixin column($height: 100%, $width: 100%) {
@@ -25,15 +27,20 @@ $darkSecondary: rgb(58,58,58);
   flex-direction: column;
   height: $height;
   width: $width;
+  flex: 1 1 0;
+}
+
+@mixin base-container($height: 100vh, $width: 100vw) {
+  height: $height;
+  width: $width;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 
 html {
-  height: 100vh;
-  width: 100vw;
-  position: relative;
-  padding: 0;
-  margin: 0;
+  @include base-container;
   font-family: Consolas;
   font-size: 10px;
   overflow-x: hidden;
@@ -41,17 +48,11 @@ html {
 }
 
 body {
-  height: inherit;
-  width: inherit;
-  position: relative;
-  padding: 0;
-  margin: 0;
+  @include base-container($height: inherit, $width: inherit);
 }
 
 #root {
-  height: inherit;
-  width: inherit;
-  position: relative;
+  @include base-container($height: inherit, $width: inherit);
 }
 
 .header-1 {
@@ -98,4 +99,37 @@ body {
 
 .caption.dark {
   color: $secondaryColor;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: $primaryColor;
+}
+
+.row {
+  @include row($height: fit-content, $width: 100%);
+}
+
+.row.justify-center {
+  justify-content: center;
+}
+
+.row.align-center {
+  align-items: center;
+}
+
+.col {
+  @include column($height: inherit, $width: fit-content);
+}
+
+.col.justify-center {
+  justify-content: center;
+}
+
+.col.align-center {
+  align-items: center;
 }
