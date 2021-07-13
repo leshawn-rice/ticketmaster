@@ -12,9 +12,9 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className={`App ${theme === 'dark' ? 'dark' : ''}`} >
+      <div className={`App ${theme === 'dark' ? 'bg-dark' : 'bg-light'}`} >
         <Navbar theme={theme} />
-        <div className={`container ${theme === 'light' ? 'bg-primary text-light' : 'bg-dark text-light-alt'}`}>
+        <div className="container">
           <Router />
         </div>
       </div>

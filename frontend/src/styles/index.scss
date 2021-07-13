@@ -3,6 +3,9 @@ $primaryColorAlt: #0ec5c2;
 $secondaryColor: white;
 $darkColor: rgb(12, 12, 12);
 $darkSecondary: rgb(58,58,58);
+$successColor: green;
+$warningColor: yellow;
+$errorColor: red;
 
 @font-face {
   font-family: Consolas;
@@ -55,6 +58,70 @@ body {
   @include base-container($height: inherit, $width: inherit);
 }
 
+.row {
+  @include row($height: fit-content, $width: 100%);
+}
+
+.col {
+  @include column($height: inherit, $width: fit-content);
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.primary {
+  color: $primaryColor;
+}
+
+.dark {
+  color: $darkColor;
+}
+
+.light {
+  color: $secondaryColor;
+}
+
+.error {
+  color: $errorColor
+}
+
+.warning {
+  color: $warningColor
+}
+
+.success {
+  color: $successColor
+}
+
+.bg-primary {
+  @include theme;
+}
+
+.bg-dark {
+  @include theme($themePrimary: $darkColor, $themeSecondary: $secondaryColor);
+}
+
+.bg-light {
+  @include theme($themePrimary: $secondaryColor, $themeSecondary: $darkColor);
+}
+
+.bg-error {
+  background-color: $errorColor
+}
+
+.bg-warning {
+  background-color: $warningColor
+}
+
+.bg-success {
+  background-color: $successColor
+}
+
 .header-1 {
   font-size: 5rem;
   font-weight: 200;
@@ -92,6 +159,10 @@ body {
   font-size: 1.25rem;
 }
 
+.text-xl {
+  font-size: 2.5rem;
+}
+
 .caption {
   font-size: 1rem;
   color: $darkSecondary;
@@ -108,28 +179,4 @@ body {
 
 .link:hover {
   color: $primaryColor;
-}
-
-.row {
-  @include row($height: fit-content, $width: 100%);
-}
-
-.row.justify-center {
-  justify-content: center;
-}
-
-.row.align-center {
-  align-items: center;
-}
-
-.col {
-  @include column($height: inherit, $width: fit-content);
-}
-
-.col.justify-center {
-  justify-content: center;
-}
-
-.col.align-center {
-  align-items: center;
 }

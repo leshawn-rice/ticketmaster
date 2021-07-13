@@ -13,7 +13,7 @@ const Navbar = ({ theme }) => {
 
   let mode = 'home';
 
-  let darkClass = theme === 'dark' ? 'dark' : '';
+  let darkClass = theme === 'dark' ? 'bg-dark' : 'bg-primary';
   let navLogo = theme === 'light' ? logo : darkLogo;
 
   return (
