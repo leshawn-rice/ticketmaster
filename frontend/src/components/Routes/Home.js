@@ -4,7 +4,7 @@
 const Home = () => {
   return (
     <div>
-      <div className="row justify-center">
+      <div className="row justify-center fadeIn-5">
         <div className="col">
           <h1 className="header-1 primary">Welcome.</h1>
           <p className="text-large dark">Large Text</p>

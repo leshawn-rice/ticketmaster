@@ -1,3 +1,11 @@
+/*
+  Leshawn Rice
+  2021
+/ *
+
+
+/* Variables */
+
 $primaryColor: #0E6EC5;
 $primaryColorAlt: #0ec5c2;
 $secondaryColor: white;
@@ -11,6 +19,8 @@ $errorColor: red;
   font-family: Consolas;
   src: url('../fonts/Consolas.ttf');
 }
+
+/* Mixins */
 
 @mixin theme($themePrimary: $primaryColor, $themeSecondary: $secondaryColor) {
   background: $themePrimary;
@@ -41,6 +51,23 @@ $errorColor: red;
   margin: 0;
 }
 
+@mixin fade-in($duration: 2s) {
+  -webkit-animation: fadein $duration; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein $duration; /* Firefox < 16 */
+      -ms-animation: fadein $duration; /* Internet Explorer */
+       -o-animation: fadein $duration; /* Opera < 12.1 */
+          animation: fadein $duration;
+}
+
+@mixin fade-out($duration: 2s) {
+  -webkit-animation: fadeout $duration; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadeout $duration; /* Firefox < 16 */
+      -ms-animation: fadeout $duration; /* Internet Explorer */
+       -o-animation: fadeout $duration; /* Opera < 12.1 */
+          animation: fadeout $duration;
+}
+
+/* Tags */
 
 html {
   @include base-container;
@@ -54,9 +81,15 @@ body {
   @include base-container($height: inherit, $width: inherit);
 }
 
+/* IDs */
+
 #root {
   @include base-container($height: inherit, $width: inherit);
 }
+
+/* Classes */
+
+// Structure & Alignment
 
 .row {
   @include row($height: fit-content, $width: 100%);
@@ -73,6 +106,10 @@ body {
 .align-center {
   align-items: center;
 }
+
+// Theme & Colors
+
+// Foreground
 
 .primary {
   color: $primaryColor;
@@ -98,6 +135,8 @@ body {
   color: $successColor
 }
 
+// Background
+
 .bg-primary {
   @include theme;
 }
@@ -121,6 +160,10 @@ body {
 .bg-success {
   background-color: $successColor
 }
+
+// Text & Links
+
+// Headers
 
 .header-1 {
   font-size: 5rem;
@@ -147,6 +190,8 @@ body {
   font-weight: 600;
 }
 
+// Paragraphs
+
 .text {
   font-size: 1.5rem;
 }
@@ -163,6 +208,8 @@ body {
   font-size: 2.5rem;
 }
 
+// Captions
+
 .caption {
   font-size: 1rem;
   color: $darkSecondary;
@@ -172,6 +219,8 @@ body {
   color: $secondaryColor;
 }
 
+// Links
+
 .link {
   color: inherit;
   text-decoration: none;
@@ -179,4 +228,120 @@ body {
 
 .link:hover {
   color: $primaryColor;
+}
+
+// Images
+
+
+
+// Animations
+
+// Fade In
+
+.fadeIn {
+  @include fade-in;
+}
+
+.fadeIn-1 {
+  @include fade-in($duration: 1s);
+}
+
+.fadeIn-2 {
+  @include fade-in($duration: 2s);
+}
+
+.fadeIn-3 {
+  @include fade-in($duration: 3s);
+}
+
+.fadeIn-4 {
+  @include fade-in($duration: 4s);
+}
+
+.fadeIn-5 {
+  @include fade-in($duration: 5s);
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// Fade Out
+
+.fadeOut {
+  @include fade-out;
+}
+
+.fadeOut-1 {
+  @include fade-out($duration: 1s);
+}
+
+.fadeOut-2 {
+  @include fade-out($duration: 2s);
+}
+
+.fadeOut-3 {
+  @include fade-out($duration: 3s);
+}
+
+.fadeOut-4 {
+  @include fade-out($duration: 4s);
+}
+
+.fadeOut-5 {
+  @include fade-out($duration: 5s);
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
