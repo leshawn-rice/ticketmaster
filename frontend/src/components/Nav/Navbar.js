@@ -11,7 +11,7 @@ import '../../styles/Navbar.scss';
 
 const Navbar = ({ theme }) => {
 
-  let mode = 'home';
+  let page = 'home';
 
   let bgClass = theme === 'dark' ? 'bg-dark' : 'bg-primary';
   let navLogo = theme === 'light' ? logo : darkLogo;
@@ -23,7 +23,7 @@ const Navbar = ({ theme }) => {
         <NavLink className={`Navbar-Header ${bgClass}`} to="/">Ticket Master</NavLink>
       </div>
       <div className={`Navbar-Links ${bgClass}`}>
-        {NAV_LINKS[mode].map(link => (
+        {NAV_LINKS[page].map(link => (
           <NavLink
             key={`${link.label}-navlink`}
             className={`Navbar-Link ${bgClass}`}
