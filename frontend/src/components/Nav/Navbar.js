@@ -13,20 +13,20 @@ const Navbar = ({ theme }) => {
 
   let mode = 'home';
 
-  let darkClass = theme === 'dark' ? 'bg-dark' : 'bg-primary';
+  let bgClass = theme === 'dark' ? 'bg-dark' : 'bg-primary';
   let navLogo = theme === 'light' ? logo : darkLogo;
 
   return (
-    <div className={`Navbar ${darkClass}`}>
+    <div className={`Navbar ${bgClass}`}>
       <div className="Navbar-Home">
         <img className="Navbar-Logo" src={navLogo} alt="nav-logo" />
-        <NavLink className={`Navbar-Header ${darkClass}`} to="/">Ticket Master</NavLink>
+        <NavLink className={`Navbar-Header ${bgClass}`} to="/">Ticket Master</NavLink>
       </div>
-      <div className={`Navbar-Links ${darkClass}`}>
+      <div className={`Navbar-Links ${bgClass}`}>
         {NAV_LINKS[mode].map(link => (
           <NavLink
             key={`${link.label}-navlink`}
-            className={`Navbar-Link ${darkClass}`}
+            className={`Navbar-Link ${bgClass}`}
             to={link.href}
           >
             {link.label}
