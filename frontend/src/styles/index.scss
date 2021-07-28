@@ -105,6 +105,21 @@ $errorColor: red;
   animation:         fadeout $duration; /* IE 10+, Fx 29+ */
 }
 
+@mixin slide-from-left($duration: 500ms) {
+  @include keyframes($name: slideFromLeft) {
+    from {
+      background-position: right;
+    }
+    to {
+      background-position: left;
+    }
+  }
+  -webkit-animation: slideFromLeft $duration; /* Safari 4+ */
+  -moz-animation:    slideFromLeft $duration; /* Fx 5+ */
+  -o-animation:      slideFromLeft $duration; /* Opera 12+ */
+  animation:         slideFromLeft $duration; /* IE 10+, Fx 29+ */
+}
+
 /* Tags */
 
 html {

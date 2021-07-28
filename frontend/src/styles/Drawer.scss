@@ -1,0 +1,10 @@
+@use 'index';
+
+.Drawer {
+  position: absolute;
+  @include index.column($height: 100%, $width: 100%);
+  z-index: 1;
+  @include index.slide-from-left();
+  background-color: blue;
+  background-size: 50%; 
+}
