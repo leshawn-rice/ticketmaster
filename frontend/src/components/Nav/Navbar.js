@@ -7,7 +7,7 @@ import logo from '../../img/logo.png';
 import darkLogo from '../../img/logo_dark.png';
 // Styles
 import '../../styles/Navbar.scss';
-import Drawer from './Drawer';
+// import Drawer from './Drawer';
 
 
 const Navbar = ({ theme }) => {
@@ -20,24 +20,24 @@ const Navbar = ({ theme }) => {
   let bgClass = theme === 'dark' ? 'bg-dark' : 'bg-primary';
   let navLogo = theme === 'light' ? logo : darkLogo;
 
-  const displayDesktop = () => {
-    return (
-      <div className={`Navbar-Links ${bgClass}`}>
-        {NAV_LINKS[page].map(link => (
-          <NavLink
-            key={`${link.label}-navlink`}
-            className={`Navbar-Link ${bgClass}`}
-            to={link.href}
-          >
-            {link.label}
-          </NavLink>
-        ))}
-      </div>
-    );
-  }
+  // const displayDesktop = () => {
+  //   return (
+  //     <div className={`Navbar-Links ${bgClass}`}>
+  //       {NAV_LINKS[page].map(link => (
+  //         <NavLink
+  //           key={`${link.label}-navlink`}
+  //           className={`Navbar-Link ${bgClass}`}
+  //           to={link.href}
+  //         >
+  //           {link.label}
+  //         </NavLink>
+  //       ))}
+  //     </div>
+  //   );
+  // }
 
-  const displayMobile = () => {
-  }
+  // const displayMobile = () => {
+  // }
 
   return (
     <div className={`Navbar ${bgClass}`}>
